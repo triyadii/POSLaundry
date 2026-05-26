@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Menu - {{ $setting->store_name ?? 'DineSync POS' }}</title>
+    <title>Menu - {{ $setting->store_name ?? 'LaundrySync POS' }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="{{ env('MIDTRANS_CLIENT_KEY') }}"></script>
 
@@ -229,7 +229,7 @@
         <div class="sticky-header">
             <div class="header-content d-flex justify-content-between align-items-center">
                 <div>
-                    <h2 class="fs-3 fw-bolder mb-0">{{ $setting->store_name ?? 'DineSync' }}</h2>
+                    <h2 class="fs-3 fw-bolder mb-0">{{ $setting->store_name ?? 'LaundrySync' }}</h2>
                     <span class="fs-8 text-muted">Hai, {{ $customerName }} (Meja {{ $table->table_number }})</span>
                 </div>
 

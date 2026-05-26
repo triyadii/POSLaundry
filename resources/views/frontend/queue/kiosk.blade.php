@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="Rendy Irawan">
-    <meta name="description" content="Kiosk Antrian DineSync POS">
+    <meta name="description" content="Kiosk Antrian LaundrySync POS">
     <title>Ambil Antrian - KIOSK</title>
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />

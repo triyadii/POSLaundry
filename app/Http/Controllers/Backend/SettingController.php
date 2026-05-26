@@ -16,7 +16,7 @@ class SettingController extends Controller
         // Jika belum ada data sama sekali, buat 1 baris default
         if (!$setting) {
             $setting = Setting::create([
-                'store_name' => 'DineSync POS',
+                'store_name' => 'LaundrySync POS',
                 'tax_rate' => 10
             ]);
         }

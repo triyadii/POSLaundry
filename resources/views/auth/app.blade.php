@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
 Author: Rendy Irawan
-Product Name: DineSync POS
-Website: http://www.dinesync.id
-Contact: support@dinesync.id
-License: Proprietary - DineSync POS System
+Product Name: LaundrySync POS
+Website: http://www.laundrysync.id
+Contact: support@laundrysync.id
+License: Proprietary - LaundrySync POS System
 -->
 <html lang="en">
 <!--begin::Head-->

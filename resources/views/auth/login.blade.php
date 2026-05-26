@@ -506,7 +506,7 @@
             }
 
             // --- MANUAL BOOK VIEWER LOGIC (PDF.JS INTEGRATION) ---
-            const pdfUrl = "{{ asset('assets/media/manuals/Panduan_DineSyncPOS.pdf') }}";
+            const pdfUrl = "{{ asset('assets/media/manuals/Panduan_LaundrySyncPOS.pdf') }}";
             let pdfDoc = null;
             let currentPage = 1;
             let totalPages = 1;

@@ -235,7 +235,7 @@
     <div class="display-header d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <i class="ki-outline ki-shop fs-2hx text-primary me-4"></i>
-            <h1 class="text-gray-900 fw-bolder fs-1 me-3 m-0">{{ $setting->store_name ?? 'DineSync POS' }}</h1>
+            <h1 class="text-gray-900 fw-bolder fs-1 me-3 m-0">{{ $setting->store_name ?? 'LaundrySync POS' }}</h1>
             <span class="badge badge-light-success fs-7 fw-bold px-3 py-2">LIVE DISPLAY</span>
         </div>
         <div class="text-end">

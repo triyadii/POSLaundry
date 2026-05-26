@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Selamat Datang - {{ $setting->store_name ?? 'DineSync POS' }}</title>
+    <title>Selamat Datang - {{ $setting->store_name ?? 'LaundrySync POS' }}</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
@@ -170,7 +170,7 @@
             </div>
 
             <h1 class="text-white mb-2 fw-bolder fs-1">Hai, Selamat Datang! 🚀</h1>
-            <span class="fs-6 text-white opacity-75">di {{ $setting->store_name ?? 'DineSync Cafe' }}</span>
+            <span class="fs-6 text-white opacity-75">di {{ $setting->store_name ?? 'LaundrySync Cafe' }}</span>
 
             <div class="custom-shape-divider-bottom">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
@@ -236,7 +236,7 @@
             @endif
 
             <div class="footer-area">
-                Powered with <i class="ki-outline ki-heart text-danger fs-6 mx-1"></i> by <strong>DineSync POS</strong>
+                Powered with <i class="ki-outline ki-heart text-danger fs-6 mx-1"></i> by <strong>LaundrySync POS</strong>
             </div>
 
         </div>

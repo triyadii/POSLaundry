@@ -50,7 +50,7 @@ Route::any('/', function () {
     return redirect('/admin/login');
 });
 
-Route::any('/dine-sync-pos', function () {
+Route::any('/laundry-sync-pos', function () {
     return redirect('/admin/login');
 });
 

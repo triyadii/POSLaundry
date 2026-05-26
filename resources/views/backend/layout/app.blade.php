@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!--
 Author: Rendy Irawan
-Product Name: DineSync POS
-Website: http://www.dinesync.id
-Contact: support@dinesync.id
-License: Proprietary - DineSync POS System
+Product Name: LaundrySync POS
+Website: http://www.laundrysync.id
+Contact: support@laundrysync.id
+License: Proprietary - LaundrySync POS System
 -->
 <html lang="en">
 <!--begin::Head-->
@@ -13,17 +13,17 @@ License: Proprietary - DineSync POS System
     <base href="{{ url('/') }}/" />
     <title>@yield('title')</title>
     <meta charset="utf-8" />
-    <meta name="description" content="DineSync POS - Dashboard Manajemen Restoran Berbasis Awan." />
-    <meta name="keywords" content="dashboard pos, admin dinesync, manajemen restoran, laporan penjualan" />
+    <meta name="description" content="LaundrySync POS - Dashboard Manajemen Laundry Berbasis Awan." />
+    <meta name="keywords" content="dashboard pos, admin laundrysync, manajemen laundry, laporan penjualan" />
     <meta name="author" content="Rendy Irawan" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="id_ID" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="DineSync POS - Admin Dashboard" />
-    <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:site_name" content="DineSync POS" />
+    <meta property="og:title" content="LaundrySync POS - Admin Dashboard" />
+    <meta property="og:url" content="https://laundrysync.id" />
+    <meta property="og:site_name" content="LaundrySync POS" />
     <link rel="canonical" href="{{ url()->current() }}" />
-    <link rel="shortcut icon" href="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -70,9 +70,9 @@ License: Proprietary - DineSync POS System
     <!--begin::loader-->
     <div class="page-loader flex-column">
         <img alt="Logo" class="theme-light-show max-h-50px"
-            src="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
-        <img alt="Logo" class="theme-dark-show max-h-50px"
-            src="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
+            src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
+        <img alt="Logo" class="theme-dark-show h-40px h-lg-50px"
+            src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
         <div class="d-flex align-items-center mt-5">
             <span class="spinner-border text-primary" role="status"></span>
             <span class="text-muted fs-6 fw-semibold ms-5">Loading...</span>
@@ -105,9 +105,9 @@ License: Proprietary - DineSync POS System
                             <!--end::Logo wrapper-->
                             <!--begin::Logo image-->
                             <a href="index.html" class="d-flex d-lg-none">
-                                <img alt="Logo" src="assets/media/logos/dine-sync-pos2.png"
-                                    class="h-20px theme-light-show" />
-                                <img alt="Logo" src="assets/media/logos/dine-sync-pos2.png"
+                                <img alt="Logo" src="assets/media/logos/laundry-sync-logo.png"
+                                    class="h-30px theme-light-show" />
+                                <img alt="Logo" src="assets/media/logos/laundry-sync-logo.png"
                                     class="h-20px theme-dark-show" />
                             </a>
                             <!--end::Logo image-->

@@ -1,5 +1,5 @@
 @extends('auth.app')
-@section('title', 'Reset Password - DineSync POS')
+@section('title', 'Reset Password - LaundrySync POS')
 @section('content')
     <div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-start p-12">
 
@@ -10,9 +10,9 @@
                 {{-- Logo --}}
                 <div class="d-flex flex-center flex-column flex-column-fluid mb-2">
                     <img alt="Logo" class="theme-light-show h-40px h-lg-150px"
-                        src="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
-                    <img alt="Logo" class="theme-dark-show h-40px h-lg-150px"
-                        src="{{ asset('assets/media/logos/dine-sync-pos2.png') }}" />
+                        src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
+                    <img alt="Logo" class="theme-dark-show bg-body theme-dark-bg-body w-50"
+                        src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
                 </div>
 
                 <div class="d-flex flex-center flex-column flex-column-fluid pb-15 pb-lg-20 my-6">
