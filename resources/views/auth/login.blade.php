@@ -134,9 +134,9 @@
             <div class="d-flex flex-center flex-column align-items-stretch h-lg-100 w-md-400px">
 
                 <div class="d-flex flex-center flex-column flex-column-fluid mb-2">
-                    <img alt="Logo" class="theme-light-show h-60px h-lg-120px"
+                    <img alt="Logo" class="theme-light-show h-100px h-lg-200px"
                         src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
-                    <img alt="Logo" class="theme-dark-show h-60px h-lg-120px"
+                    <img alt="Logo" class="theme-dark-show h-100px h-lg-200px"
                         src="{{ asset('assets/media/logos/laundry-sync-logo.png') }}" />
                 </div>
 
@@ -227,7 +227,7 @@
                                             <div class="fs-6 fw-semibold text-gray-400">Total 3 Halaman</div>
                                         </div>
                                     </div>
-                                    <button class="btn btn-sm btn-primary">Lihat</button>
+                                    <!-- <button class="btn btn-sm btn-primary">Lihat</button> -->
                                 </div>
                             </div>
                         </div>
