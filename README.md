@@ -1,59 +1,88 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# LaundrySync POS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**LaundrySync POS** adalah aplikasi Point of Sale (POS) berbasis web untuk usaha **laundry**. Aplikasi ini mencakup seluruh alur operasional laundry — mulai dari penerimaan order di kasir, manajemen layanan & pelanggan, pickup/delivery, pembayaran (tunai maupun online), hingga keuangan dan laporan.
 
-## About Laravel
+Aplikasi ini berkembang dari basis POS restoran, sehingga sebagian **fitur restoran (legacy)** seperti Kitchen Display, manajemen menu & meja, serta sistem antrian masih tersedia di dalamnya.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sebagai konteks, aplikasi dibangun dengan:
 
-## Learning Laravel
+- **Backend:** Laravel 12 (PHP 8.2+)
+- **Frontend:** Blade + Alpine.js, Tailwind CSS 4, Vite
+- **Database:** MySQL
+- **Hak Akses & Audit:** Spatie Laravel Permission, Spatie Laravel Activity Log
+- **Pembayaran:** Midtrans (QRIS & transfer bank)
+- **Real-time:** Laravel Reverb + Laravel Echo / Pusher
+- **Lainnya:** QR Code generator, Yajra DataTables, Laravel Octane
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Fitur Aplikasi
 
-## Laravel Sponsors
+### A. Operasional Laundry
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Manajemen Order / Transaksi** — Penerimaan order laundry melalui modul kasir: input detail item (berat/kuantitas, kondisi barang, foto kondisi), penetapan staf produksi, estimasi waktu selesai, dan catatan khusus.
+- **Tracking Status Order** — Setiap perubahan status order (diterima → proses → quality check → siap jemput → dikirim → selesai) tercatat lengkap dengan keterangan, pelaku, dan waktunya.
+- **Manajemen Pickup & Delivery** — Pengaturan penjemputan dan pengiriman barang: penugasan kurir, status pengantaran, koordinat lokasi, foto bukti, dan biaya antar.
+- **Manajemen Layanan Laundry** — Pengelolaan layanan beserta kategorinya (cuci kering, cuci basah, setrika, dll.), satuan (kg, pcs, meter, pasang), harga per satuan, estimasi durasi pengerjaan, dan status aktif/nonaktif.
+- **Manajemen Pelanggan** — Data pelanggan lengkap (nama, kontak, alamat, koordinat lokasi), status membership (Regular/VIP), dan pencatatan poin loyalitas.
 
-### Premium Partners
+### B. Kasir & Pembayaran
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Modul Kasir & Pembayaran** — Pemrosesan pembayaran dengan beberapa metode: tunai, pembayaran online (Midtrans), serta DP/cicilan.
+- **Integrasi Payment Gateway Midtrans** — Mendukung QRIS dan transfer bank, dengan penanganan webhook untuk pembaruan status pembayaran otomatis.
+- **Manajemen Shift Kasir** — Buka/tutup shift per kasir dengan pencatatan kas awal, kas seharusnya, kas aktual, dan rekonsiliasi kas.
+- **Promo & Diskon** — Pembuatan dan pengelolaan promo dengan tipe diskon persentase maupun nominal, serta toggle aktif/nonaktif.
 
-## Contributing
+### C. Fitur Restoran (Legacy)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Manajemen Menu** — CRUD menu makanan/minuman beserta harga, kategori, dan status ketersediaan.
+- **Kitchen Display System (KDS)** — Tampilan dapur real-time untuk memantau dan memperbarui status item yang sedang diproses.
+- **Manajemen Meja & QR Code** — Daftar meja beserta statusnya, lengkap dengan pembuatan dan pencetakan QR Code per meja.
+- **Queue Management (Antrian)** — Kiosk pengambilan nomor antrian, layar TV display, dan pemanggilan antrian secara real-time.
+- **Customer Order via QR** — Pelanggan dapat memindai QR Code, memilih menu/layanan, memasukkan ke keranjang, dan checkout secara mandiri.
 
-## Code of Conduct
+### D. Keuangan & Laporan
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **Manajemen Pengeluaran & Anggaran Harian** — Pencatatan pengeluaran (expenses) berkategori serta penetapan dan pemantauan anggaran/target harian.
+- **Laporan Penjualan** — Rekap transaksi dengan filter rentang tanggal, total penjualan, pajak, diskon, dan rincian per metode pembayaran.
+- **Laporan Barang/Layanan Terjual** — Laporan per item/layanan: kuantitas terjual dan pendapatan, termasuk analisis produk terlaris.
+- **Dashboard KPI** — Ringkasan real-time: pendapatan, pengeluaran, laba bersih, jumlah item terjual, layanan terlaris, dan grafik penjualan vs target.
 
-## Security Vulnerabilities
+### E. User & Keamanan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Manajemen User & Role** — CRUD user dengan kontrol akses berbasis peran (RBAC) menggunakan Spatie Permission.
+- **Permission Granular** — Hak akses diatur per modul (kasir, kitchen, antrian, data master, keuangan, laporan, manajemen user, dll.).
+- **Ban / Unban User** — Pemblokiran akses user tertentu beserta middleware penjaga untuk mencegah akses user yang diblokir.
+- **Profil & Keamanan Akun** — Pengelolaan profil, unggah avatar, ganti kata sandi, serta riwayat dan manajemen sesi login.
+- **Activity Log / Audit Trail** — Pencatatan setiap aktivitas user (buat, ubah, hapus) lengkap dengan IP address dan informasi perangkat.
 
-## License
+### F. Pengaturan
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- **Konfigurasi Aplikasi** — Pengaturan nama aplikasi, logo, nomor telepon, konfigurasi payment gateway, dan pengaturan tampilan.
+
+---
+
+## Role & Hak Akses
+
+Aplikasi menggunakan sistem peran (RBAC). Gambaran umum peran dan aksesnya:
+
+| Peran | Akses |
+|-------|-------|
+| **Superadmin** | Akses penuh ke seluruh modul |
+| **Admin** | Operasional, data master, keuangan, dan laporan |
+| **Kasir** | Order/transaksi, pembayaran, shift, antrian, laporan |
+| **Kitchen** | Kitchen Display & antrian |
+| **Kurir** | Tugas pickup & delivery |
+
+---
+
+## Teknologi Real-time & Khusus
+
+- **Real-time Broadcasting** (Laravel Reverb + Pusher) untuk Kitchen Display dan sistem antrian.
+- **QR Code** untuk meja dan order mandiri pelanggan.
+- **Midtrans** untuk pembayaran online (QRIS & transfer bank).
+- **Activity Log** sebagai audit trail seluruh aktivitas pengguna.
