@@ -10,8 +10,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Drop legacy postgres enum check constraints on order_details table
-        DB::statement('ALTER TABLE order_details DROP CONSTRAINT IF EXISTS order_details_status_check');
+    	if (DB::getDriverName() === 'pgsql') {
+        	DB::statement('ALTER TABLE order_details DROP CONSTRAINT IF EXISTS order_details_status_check');
+    	}
     }
 
     /**

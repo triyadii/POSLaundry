@@ -12,9 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        // Menghapus batasan check (enum) bawaan Laravel di PostgreSQL
-        // Agar kolom payment_method bisa diisi string apa saja (cash, midtrans, qris, dll)
-        DB::statement('ALTER TABLE orders DROP CONSTRAINT IF EXISTS orders_payment_method_check');
+        if (DB::getDriverName() === 'pgsql') {
+            DB::statement(
+                'ALTER TABLE orders DROP CONSTRAINT IF EXISTS orders_payment_method_check'
+            );
+        }
     }
 
     /**
@@ -22,7 +24,20 @@ return new class extends Migration
      */
     public function down(): void
     {
-        // Jika di-rollback, kembalikan constraint-nya
-        DB::statement("ALTER TABLE orders ADD CONSTRAINT orders_payment_method_check CHECK (payment_method::text = ANY (ARRAY['cash'::character varying, 'midtrans_qris'::character varying, 'midtrans_transfer'::character varying]::text[]))");
+        if (DB::getDriverName() === 'pgsql') {
+            DB::statement("
+                ALTER TABLE orders
+                ADD CONSTRAINT orders_payment_method_check
+                CHECK (
+                    payment_method::text = ANY (
+                        ARRAY[
+                            'cash'::character varying,
+                            'midtrans_qris'::character varying,
+                            'midtrans_transfer'::character varying
+                        ]::text[]
+                    )
+                )
+            ");
+        }
     }
 };
